@@ -45,5 +45,21 @@
   <!-- The main bundle js is generated during the build process -->
   <script src="build/main.js"></script>
 
+
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    //Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyDnjpetDsI68aAynVG_8Vc_Nxy0j7508Ro",
+    authDomain: "authapp-650f7.firebaseapp.com",
+    databaseURL: "https://authapp-650f7.firebaseio.com",
+    projectId: "authapp-650f7",
+    storageBucket: "authapp-650f7.appspot.com",
+    messagingSenderId: "161585191442"
+  };
+   firebase.initializeApp(config);
+  </script>
+
+
 </body>
 </html>

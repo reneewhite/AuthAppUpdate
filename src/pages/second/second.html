@@ -1,0 +1,56 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="orange">
+    <ion-title style="text-align: center">Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Surname</ion-label>
+      <ion-textarea formControlName="surname"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Gender</ion-label>
+      <ion-input type="text" formControlName="gender"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-textarea formControlName="username"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-textarea formControlName="password"></ion-textarea>
+    </ion-item>
+    <br>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col >
+          <button ion-button block round type="submit()" [disabled]="personForm.invalid" style="background-color:#34495E">Sign up</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button block round (click)="onLog()" style="background-color:#34495E">Login</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    
+  </form>
+
+ 
+</ion-content>
