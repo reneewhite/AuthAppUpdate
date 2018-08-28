@@ -13,16 +13,34 @@
 </ion-header>
 
 <ion-content padding>
+  
   <form [formGroup]="loginForm" (ngSubmit)="deSubmit()">
+    
     <ion-item>
       <ion-label floating>Username</ion-label>
-      <ion-textarea formControlName="username"></ion-textarea>
-    </ion-item>
-    <ion-item>
-      <ion-label floating>Password</ion-label>
-      <ion-textarea formControlName="password"></ion-textarea>
+      <ion-textarea  type="text" formControlName="username" class="form-control"></ion-textarea>
     </ion-item>
     <br>
+    <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.username" >
+          <div class="error-message" *ngIf="loginForm.get('username').hasError(validation.type) && (loginForm.get('username').dirty || loginForm.get('username').touched)">
+        {{ validation.message }}
+          </div>
+        </ng-container>
+    </div>
+    <br>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-textarea  type="text" formControlName="password" class="form-control"></ion-textarea>
+    </ion-item>
+    <br>
+    <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.password" >
+          <div class="error-message" *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+        {{ validation.message }}
+          </div>
+        </ng-container>
+    </div>
     <ion-grid>
       <ion-row>
         <ion-col>
@@ -38,10 +56,10 @@
           <button ion-button block round (click)="desSubmit()">Log On Gmail</button>
       </ion-col>
       <ion-col>
-          <button ion-button block round (click)="reset()">forgot password</button>
+          <button ion-button block round (click)="reset()">Forgot password</button>
       </ion-col>
     </ion-row>
   </ion-grid>
 
- 
+
 </ion-content>
